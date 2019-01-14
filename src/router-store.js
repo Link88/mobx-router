@@ -61,7 +61,7 @@ export class RouterStore {
                 nextPath
             );
 
-        runInAction(() => {
+        runInAction("updateCurrentView", () => {
             this.currentView = view;
             this.params = toJS(paramsObj);
             this.queryParams = toJS(queryParamsObj);

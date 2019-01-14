@@ -249,14 +249,16 @@ var RouterStore = (exports.RouterStore = ((_class = (function() {
                                                     nextPath
                                                 );
 
-                                            (0, _mobx.runInAction)(function() {
-                                                _this.currentView = view;
-                                                _this.params = (0, _mobx.toJS)(
-                                                    paramsObj
-                                                );
-                                                _this.queryParams = (0,
-                                                _mobx.toJS)(queryParamsObj);
-                                            });
+                                            (0, _mobx.runInAction)(
+                                                'updateCurrentView',
+                                                function() {
+                                                    _this.currentView = view;
+                                                    _this.params = (0,
+                                                    _mobx.toJS)(paramsObj);
+                                                    _this.queryParams = (0,
+                                                    _mobx.toJS)(queryParamsObj);
+                                                }
+                                            );
 
                                             nextParams = (0, _mobx.toJS)(
                                                 paramsObj
